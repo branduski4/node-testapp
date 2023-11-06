@@ -1,0 +1,17 @@
+const express = require("express");
+const app = express();
+const port = 3000;
+
+// Serve static files from the 'public' directory
+app.use(express.static("public"));
+
+app.get("/shirts", (req, res) => {
+  res.send({
+    id: 1,
+    name: "holaaaa",
+    size: "XL",
+  });
+});
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
